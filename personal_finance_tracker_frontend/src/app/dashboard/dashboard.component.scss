@@ -1,0 +1,32 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Adjusts the space between the dashboard-cards and dashboard-graph sections
+  
+    .dashboard-cards {
+      display: flex;
+      justify-content: space-between; // Distributes the mat-cards evenly with equal spacing
+      gap: 20px; // Adjusts the space between individual cards
+  
+      mat-card {
+        flex: 1; // Ensures that each mat-card takes up an equal amount of space
+      }
+    }
+  
+    .dashboard-graph {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; // Adjusts the space between the rows of graphs
+  
+      .graph-row {
+        display: flex;
+        justify-content: space-between; // Aligns graphs horizontally
+        gap: 20px;
+  
+        mat-card {
+          flex: 1; // Ensures that each mat-card takes up an equal amount of space
+        }
+      }
+    }
+  }
+  

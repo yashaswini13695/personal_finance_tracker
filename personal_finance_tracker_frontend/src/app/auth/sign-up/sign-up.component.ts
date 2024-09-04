@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   AbstractControl,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -16,7 +17,7 @@ import {
 export class SignUpComponent {
   signUpForm: FormGroup;
 
-  constructor() {
+  constructor(private router: Router) {
     this.signUpForm = new FormGroup({
       username: new FormControl<string>('', [
         Validators.required,
@@ -68,5 +69,6 @@ export class SignUpComponent {
 
   onCancel() {
     this.signUpForm.reset();
+    this.router.navigateByUrl('/login');
   }
 }

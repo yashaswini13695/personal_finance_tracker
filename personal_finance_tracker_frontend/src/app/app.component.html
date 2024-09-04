@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div *ngIf="authService.isAuthenticated(); else loginPage">
+  <!-- Sidenav should only be visible when authenticated -->
+  <app-sidenav></app-sidenav>
+  
+  <!-- Body component with router outlet -->
+  <app-body></app-body>
+</div>
+
+<!-- Template for login/signup pages -->
+<ng-template #loginPage>
+  <router-outlet></router-outlet>
+</ng-template>

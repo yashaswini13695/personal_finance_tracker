@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>{{ data.transaction ? 'Edit Transaction' : 'Add Transaction' }}</h2>
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+  <mat-form-field class="full-width">
+    <mat-label>Type</mat-label>
+    <mat-select formControlName="type">
+      <mat-option value="income">Income</mat-option>
+      <mat-option value="expense">Expense</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Category</mat-label>
+    <mat-select formControlName="category">
+      <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Amount</mat-label>
+    <input matInput formControlName="amount" type="number" />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Date</mat-label>
+    <input matInput formControlName="date" [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button color="primary" type="submit">{{ data.transaction ? 'Update' : 'Add' }}</button>
+  </mat-dialog-actions>
+</form>
+

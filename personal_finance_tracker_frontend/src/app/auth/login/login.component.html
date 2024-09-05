@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="login">
+      <div class="content">
+         <img src="../../assets/project-2.png">
+     </div>
+    <div class="loginform">
+      <h1>Login</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+        <mat-form-field class="form-group">
+          <!-- <mat-icon aria-hidden="false" aria-label="account">account_circle</mat-icon> -->
+          <input matInput formControlName="username" type="email" placeholder="Enter your email"
+              required />
+         </mat-form-field>
+         <mat-form-field class="form-group">
+          <!-- <mat-icon aria-hidden="false" aria-label="key">vpn_key</mat-icon> -->
+          <input matInput formControlName="password" type="password" placeholder="Enter your password">
+          <!-- <img src='{{ (isPasswordField1 ? "assets/images/eye-strike.svg" :"assets/images/eye.svg") |secureUrl }}'
+              (click)="togglePasswordField1()" alt="Eye"> -->
+        </mat-form-field>
+        <button class="btn"  type="submit" [disabled]="loginForm.invalid">Login</button><br/><br/>
+         <div class="signup"> Don`t have an account ?  <a routerLink ='/sign-up'>Sign Up</a></div>
+      </form>
+    </div>
+    </div>
+  </div>

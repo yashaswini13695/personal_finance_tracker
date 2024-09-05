@@ -11,6 +11,10 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TransactionManagementComponent } from './transaction-management/transaction-management.component';
 import { BodyComponent } from './body/body.component';
+import { TransactionFormDialogComponent } from './_models/transaction-form-dialog/transaction-form-dialog.component';
+import { DeleteConfirmationDialogComponent } from './_models/delete-confirmation-dialog/delete-confirmation-dialog.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';  // Import this
 
 @NgModule({
   declarations: [
@@ -20,7 +24,9 @@ import { BodyComponent } from './body/body.component';
     SidenavComponent,
     DashboardComponent,
     TransactionManagementComponent,
-    BodyComponent
+    BodyComponent,
+    TransactionFormDialogComponent,
+    DeleteConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +34,9 @@ import { BodyComponent } from './body/body.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule   // Add this module for date handling
   ],
   providers: [],
   bootstrap: [AppComponent]

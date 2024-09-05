@@ -1,32 +1,43 @@
 <div class="dashboard">
-    <div class="dashboard-cards">
+  <div class="dashboard-cards">
+    <mat-card class="dashboard-card income-card">
+      <mat-card-title>Total Income</mat-card-title>
+      <mat-card-content>
+        <h2>100</h2>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="dashboard-card expenses-card">
+      <mat-card-title>Total Expenses</mat-card-title>
+      <mat-card-content>
+        <h2>30</h2>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="dashboard-card balance-card">
+      <mat-card-title>Balance</mat-card-title>
+      <mat-card-content>
+        <h2>70</h2>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="dashboard-graph">
+    <div class="graph-row">
       <mat-card appearance="outlined">
-        <mat-card-content>Total Income</mat-card-content>
+        <mat-card-content><canvas id="canvas"></canvas></mat-card-content>
       </mat-card>
       <mat-card appearance="outlined">
-        <mat-card-content>Expenses</mat-card-content>
-      </mat-card>
-      <mat-card appearance="outlined">
-        <mat-card-content>Balance</mat-card-content>
+        <mat-card-content><canvas id="canvas-pie"></canvas></mat-card-content>
       </mat-card>
     </div>
-    <div class="dashboard-graph">
-      <div class="graph-row">
-        <mat-card appearance="outlined">
-          <mat-card-content>Graph 1</mat-card-content>
-        </mat-card>
-        <mat-card appearance="outlined">
-          <mat-card-content>Graph 2</mat-card-content>
-        </mat-card>
-      </div>
-      <div class="graph-row">
-        <mat-card appearance="outlined">
-          <mat-card-content>Graph 3</mat-card-content>
-        </mat-card>
-        <mat-card appearance="outlined">
-          <mat-card-content>Graph 4</mat-card-content>
-        </mat-card>
-      </div>
+    <div class="graph-row">
+      <mat-card appearance="outlined">
+        <mat-card-content
+          ><canvas id="canvas-line-chart"></canvas
+        ></mat-card-content>
+      </mat-card>
+      <mat-card appearance="outlined">
+        <!-- <mat-card-title>Expenses by month</mat-card-title> -->
+        <mat-card-content><canvas id="canvas-second-bar-chart"></canvas></mat-card-content>
+      </mat-card>
     </div>
   </div>
-  
+</div>

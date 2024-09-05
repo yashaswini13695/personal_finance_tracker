@@ -1,32 +1,70 @@
 .dashboard {
     display: flex;
     flex-direction: column;
+    padding: 10px;
     gap: 20px; // Adjusts the space between the dashboard-cards and dashboard-graph sections
   
     .dashboard-cards {
       display: flex;
       justify-content: space-between; // Distributes the mat-cards evenly with equal spacing
-      gap: 20px; // Adjusts the space between individual cards
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 20px;
   
-      mat-card {
-        flex: 1; // Ensures that each mat-card takes up an equal amount of space
+      .dashboard-card {
+        width: 300px;
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .income-card {
+        background-color: #4caf50; /* Green */
+        color: white;
+      }
+      
+      .expenses-card {
+        background-color: #f44336; /* Red */
+        color: white;
+      }
+      
+      .balance-card {
+        background-color: #2196f3; /* Blue */
+        color: white;
+      }
+      
+      mat-card-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      
+      h2 {
+        font-size: 36px;
+        margin: 10px 0;
       }
     }
   
     .dashboard-graph {
       display: flex;
       flex-direction: column;
-      gap: 20px; // Adjusts the space between the rows of graphs
-  
-      .graph-row {
-        display: flex;
-        justify-content: space-between; // Aligns graphs horizontally
-        gap: 20px;
-  
-        mat-card {
-          flex: 1; // Ensures that each mat-card takes up an equal amount of space
-        }
-      }
+      gap: 20px; /* Adjusts the space between the rows of graphs */
+    }
+    
+    .graph-row {
+      display: flex;
+      justify-content: space-between; /* Aligns graphs horizontally */
+      gap: 20px;
+    }
+    
+    mat-card {
+      flex: 1; /* Ensures that each mat-card takes up an equal amount of space */
+    }
+    
+    #canvas-pie {
+      margin: 0 auto; /* Centers the pie chart horizontally */
+      height: 500px; 
     }
   }
   
